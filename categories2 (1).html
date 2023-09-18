@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header1>
+  <h2>When working - Instrumentalist - Fav Genre</h2>
+</header1>
+
+<div class="grid-container">
+    <div class="grid-item grid-item-1">
+    <p>This page shows the ID, whether they listen to music while working, wehther they're an instrumentalist and their favourite genre of music.</p>
+    </div>
+
+<table>
+  <thead>
+      <tr> 
+      <th><a href="/categories2?sort=ID&order={{ order }}">ID</a></th>
+      <th><a href="/categories2?sort=While_working&order={{ order }}">While working</a></th>
+      <th><a href="/categories2?sort=Instrumentalist&order={{ order }}">Instrumentalist</a></th>
+      <th><a href="/categories2?sort=Fav_genre&order={{ order }}">Favourite genre</a></th>
+    </tr> 
+  </thead>
+  <tbody>
+    {% for ID in tags %}
+    <tr>
+      <td>{{ ID[0] }}</td>
+      <td>{{ ID[1] }}</td>
+      <td>{{ ID[2] }}</td>
+      <td>{{ ID[3] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  
+</table>
+
+
+{% endblock %} 

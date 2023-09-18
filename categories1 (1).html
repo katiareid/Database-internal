@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header1>
+ <h2>Age - Streaming Service - Hours listening</h2>
+</header1>
+
+<div class="grid-container">
+    <div class="grid-item grid-item-1">
+    <p>This page shows the ID, Age, Primary Streaming Service and how many hours the person listens to music per day.</p>
+    </div>
+
+      
+<table>
+  <thead>
+      <tr> 
+      <th><a href="/categories1?sort=ID&order={{ order }}">ID</a></th>
+      <th><a href="/categories1?sort=Age&order={{ order }}">Age</a></th>
+      <th><a href="/categories1?sort=Primary_streaming_service&order={{ order }}">Primary Streaming Service</a></th>
+      <th><a href="/categories1?sort=Hours_per_day&order={{ order }}">Hours per day</a></th>
+    </tr>   
+  </thead>
+  <tbody>
+    {% for ID in tags %}
+    <tr>
+      <td>{{ ID[0] }}</td>
+      <td>{{ ID[1] }}</td>
+      <td>{{ ID[2] }}</td>
+      <td>{{ ID[3] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  
+</table>
+
+
+
+
+{% endblock %} 

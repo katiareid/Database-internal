@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music and Mental Health</title>
+  <link type="text/css" rel="stylesheet" href="static/styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>MUSIC AND MENTAL HEALTH</h1>
+  </header>
+
+  <nav>
+    <ul class="navlinks">  
+      <ul>
+       <li><a href="/"> Home </a></li>
+       <li><a href="/about"> About </a></li> 
+       <li><a href="/categories1"> Categories1 </a></li>  
+       <li><a href="/categories2"> Catergories2 </a></li> 
+       <li><a href="/categories3"> Categories3 </a></li>
+      </ul>
+      {% for type in types %}
+        <li>
+          <a href="/music_mental/{{ type }}">{{ type }}</a>
+        </li>
+      {% endfor %}   
+    </ul>
+      <form method="POST" action="/search">
+      <input type="text" name="search" id="search">
+      <input type="submit" value="Search">
+    </form> 
+  </nav>
+
+  {% block main %}{% endblock %}
+
+  
+<footer>
+  <p>&copy; Katia Reid 2023</p>
+</footer> 
+</body>
+</html>

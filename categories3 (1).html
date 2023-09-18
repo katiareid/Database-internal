@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header1>
+  <h2>Age - Anxiety - Depression - Insomnia</h2>
+</header1>
+
+<div class="grid-container">
+    <div class="grid-item grid-item-1">
+    <p>This page shows the ID, Age and whether the person has anxiety, depression or insmonia on a scale of 1-10.</p>
+    </div>
+
+
+<table>
+  <thead>
+    <tr> 
+      <th><a href="/categories3?sort=ID&order={{ order }}">ID</a></th>
+      <th><a href="/categories3?sort=Age&order={{ order }}">Age</a></th>
+      <th><a href="/categories3?sort=Anxiety&order={{ order }}">Anxiety</a></th>
+      <th><a href="/categories3?sort=Depression&order={{ order }}">Depression</a></th>
+      <th><a href="/categories3?sort=Insomnia&order={{ order }}">Insomnia</a></th>
+    </tr>    
+  </thead>
+  <tbody>
+    {% for ID in tags %}
+    <tr>
+      <td>{{ ID[0] }}</td>
+      <td>{{ ID[1] }}</td>
+      <td>{{ ID[2] }}</td>
+      <td>{{ ID[3] }}</td>
+      <td>{{ ID[4] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  
+</table>
+
+
+
+
+{% endblock %} 

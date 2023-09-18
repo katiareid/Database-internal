@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block main %}
+<header1>
+  <h2>About</h2>
+</header1>
+
+
+<body>
+  <div class="grid-container">
+    <div class="grid-item grid-item-1">
+  <p>Music therapy, or MT, is the use of music to improve an individual's stress, mood, and overall mental health. MT is also recognized as an evidence-based practice, using music as a catalyst for "happy" hormones such as oxytocin.
+
+However, MT employs a wide range of different genres, varying from one organization to the next.
+
+The dataset aims to identify what, if any, correlations exist between an individual's music taste and their self-reported mental health. Ideally, these findings could contribute to a more informed application of MT or simply provide interesting sights about the mind.</p>
+    </div>
+      
+<table>
+  <thead>
+      <tr> 
+      <th><a href="/about?sort=ID&order={{ order }}">ID</a></th>
+      <th><a href="/about?sort=Age&order={{ order }}">Age</a></th>
+      <th><a href="/about?sort=Primary_streaming_service&order={{ order }}">Primary Streaming Service</a></th>
+      <th><a href="/about?sort=Hours_per_day&order={{ order }}">Hours per day</a></th>
+      <th><a href="/about?sort=While_working&order={{ order }}">While working</a></th>
+      <th><a href="/about?sort=Instrumentalist&order={{ order }}">Instrumentalist</a></th>
+      <th><a href="/about?sort=Fav_genre&order={{ order }}">Fav genre</a></th>
+      <th><a href="/about?sort=Anxiety&order={{ order }}">Anxiety</a></th>
+      <th><a href="/about?sort=Depression&order={{ order }}">Depression</a></th>
+      <th><a href="/about?sort=Insomnia&order={{ order }}">Insomnia</a></th>
+    </tr>   
+  </thead>
+  <tbody>
+    {% for ID in tags %}
+    <tr>
+      <td>{{ ID[0] }}</td>
+      <td>{{ ID[1] }}</td>
+      <td>{{ ID[2] }}</td>
+      <td>{{ ID[3] }}</td>
+      <td>{{ ID[4] }}</td>
+      <td>{{ ID[5] }}</td>
+      <td>{{ ID[6] }}</td>
+      <td>{{ ID[7] }}</td>
+      <td>{{ ID[8] }}</td>
+      <td>{{ ID[9] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+
+  
+  
+</table>
+
+
+
+
+    
+
+{% endblock %} 
